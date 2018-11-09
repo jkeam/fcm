@@ -210,6 +210,7 @@ class FCM
   end
 
   def build_post_body(registration_ids, options = {})
+    return options if registration_ids.nil? || registration_ids.empty?
     ids = registration_ids.is_a?(String) ? [registration_ids] : registration_ids
     { registration_ids: ids }.merge(options)
   end
