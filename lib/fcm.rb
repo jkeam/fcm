@@ -216,6 +216,7 @@ class FCM
   end
 
   def build_response(response, registration_ids = [])
+    registration_ids ||= []
     body = response.body || {}
     response_hash = { body: body, headers: response.headers, status_code: response.code }
     case response.code
